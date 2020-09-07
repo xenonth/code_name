@@ -7,15 +7,17 @@ var scriptSrcQuestion = ['style', 'script', 'python', 'code'];
 //Which of the following best describes testing for Javascript?
 var apiQuestion = ['experiment until the application breaks', 'programmer tests for flaws', 'release without testing and wait for user feedback', 'none of the above'];
 //Which of the following returns true
-var booleanQuestion = ['NaN', 'undefined', '0', '1']
+var booleanQuestion = ['NaN', 'undefined', '0', '1'];
 
-var countdown = document.getElementById('timer')
+var countdown = document.getElementById('timer').textContent; //retunring Null
+console.log(countdown)
 var count = 60;
-countdown.value = count
-
+//The following block will relates and relies on the countdown value.
+//on click of start the following will trigger
 function timer () {
     setInterval (function () {
-        count--;        
+        count--;
+        console.log('DOOOM!!')        
         if (count === 0) {
             clearInterval;
             //Will need an additional trigger to jump html pages this should be a seperate function
@@ -27,8 +29,12 @@ function timeDecrease (/*Will fire on wrong answer Input*/) {
 
 
 }
-
-function jumpToYouLose () {
+//When timer reaches 0 the following function will fire to jump to score Result page.
+function gameOver () {
 
 }
-timer;
+//Quiz Start Button 
+startBtn = document.getElementById("startQuiz")
+startBtn.eventListener("on-click", )
+
+//Question Variable Buttons
