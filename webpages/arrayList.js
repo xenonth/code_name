@@ -1,18 +1,5 @@
 window.onload = function() {
 
-    // create a couple of elements in an otherwise empty HTML page
-
- 
-    //Which set of characters is used to define an array?
-
-    //Which of the following is not an object?
-
-  
-    //
-    //Which of the following returns true
-    //var booleanQuestion = ['NaN', 'undefined', '0', '1'];
-      
-    
     //Listing Variables
     //purpose is to create a quiz answer list by using the arrayQuestion Array and having buttion inside of the li Icon.
     function listQuizArrayQuestionOne() {

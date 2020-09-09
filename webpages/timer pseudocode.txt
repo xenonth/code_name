@@ -1,0 +1,49 @@
+In order for the api's to work with minimal bugs or error which has been a massive headache, the solution was a JS module approach.
+One js file per webpage with an import of the timer function to keep track of the timer value.   
+
+
+Thus, for the timer to work accurately the following will need to be done.
+BEGIN
+    WHEN START QUIZ Btn is clicked, 
+    window.onload of QuestionOne.html () {
+        BEGIN function
+            setInterval (function {
+                reduce timer count by 1 each second;
+                if (list link is clicked) {
+                    save count value to local storage;
+                }
+                if (false link is clicked) {
+                    transfer to next page count = count - 15;
+                }
+                if (count === 0) {
+                    jump to result.html;
+                    clearInterval;
+                }
+            }, 1000)
+        }
+        END function
+
+The following would be programmed for questionTwo.html through to questionFive.html;
+BEGIN   
+    window.onload of QuestionX.html () {
+        count = window.getLocalStorage(count.value);
+            setInterval (function {
+                reduce timer count by 1 each second;
+
+                if ( correct list link is clicked) {
+                    save count value to local storage;
+                }
+                
+                if (wrong link is clicked) {
+                    transfer to next page count = count - 15;
+                    setLocalStorage(count.value);
+                }
+                
+                if (count === 0) {
+                    jump to result.html
+                    clearInterval
+                }
+            }, 1000)
+        }
+    }
+END
