@@ -6,11 +6,9 @@ window.onload = function() {
     //Which set of characters is used to define an array?
 
     //Which of the following is not an object?
-    //var objectQuestion = ['var car = {make: Ford, model: Fiesta}', '[blue, white, yellow]', 'jkfds;jklfsdaj;lkfdsa;jlkdfs;jl', 'ninety-nine'];
-    //Which following command allows javascript to run in html?
-    //var scriptSrcQuestion = ['style', 'script', 'python', 'code'];
-    //Which of the following best describes testing for Javascript?
-    //var apiQuestion = ['experiment until the application breaks', 'programmer tests for flaws', 'release without testing and wait for user feedback', 'none of the above'];
+
+  
+    //
     //Which of the following returns true
     //var booleanQuestion = ['NaN', 'undefined', '0', '1'];
       
@@ -48,3 +46,6 @@ window.onload = function() {
       listQuizArrayQuestionOne ();
 
 }
+
+
+  

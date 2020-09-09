@@ -1,4 +1,4 @@
-
+window.onload = function() {
 
 var countdown = document.getElementById("#timer")
 //console.log(countdown)
@@ -28,8 +28,14 @@ function timeDecrease (/*Will fire on wrong answer Input*/) {
 function gameOver () {
 
 }
+
+
+
+}  
 //Quiz Start Button 
-startBtn = document.getElementById("startQuiz")
-startBtn.addeventListener("click", listQuizArrayQuestion)
+//var startBtn = document.getElementById("startQuiz")
+//startBtn.setAttribute("color", "red")
+//startBtn.addeventListener("click", listQuizArrayQuestionOne());
 
 
+}
