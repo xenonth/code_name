@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--script source to run webpage-->
-        <script src="Assets/script.js"></script>
+        <!--script src="Assets/script.js"></script-->
         <!--Bootstrap link-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -17,11 +17,14 @@
     <div class = "row">
         <section class="col-md-2"></section>
         <section class = "col-md-8">
-            <form>
-                <input class="form-control" id = "scoreholder" type="text" placeholder="Initials Here"/>
+            <section id ="timer" value="60">60</section>
+            <form id = "leaderForm">
+                <input class="form-control" id = "scoreHolder" type="text" placeholder="Initials Here"/>
                 <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id ="storeInfo">Submit</button>
             </form>
+            <p class= "h5 text-center">Leaderboard</p>
+            <ul id = "leaderboard"></ul>
         </section> 
         <section class="col-md-2"></section>
     </div>  
@@ -32,4 +35,52 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </section>
 </body>
+<script>
+    var storeBtn = document.getElementById("storeInfo");;
+    var leaderForm = document.getElementById("leaderForm");
+    var leaderInput = document.getElementById("scoreHolder");
+    var winnerArray = [];
+    var boardList = document.getElementById("leaderboard");
+    var score = document.getElementById("timer");
+
+function listStorageItem () {
+    scoreBoardMember = window.localStorage.getItem();
+    winnerArray.push()
+    for (i = 0; i < winnerArray.length; i++) {};
+};
+
+ function renderBoard() {
+  // Clear todoList element and update todoCountSpan
+  boardList.innerHTML = "";
+  
+  // Render a new li for each leaderboardItem
+  for (var i = 0; i < winnerArray.length; i++) {
+    var winner = winnerArray[i];
+
+    var li = document.createElement("li");
+    li.textContent = winner;
+    boardList.appendChild(li);
+  }
+}
+
+
+// When form is submitted...
+leaderForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var leaderText = leaderInput.value.trim();
+   // Return from function early if submitted todoText is blank
+  if (leaderText === "") {
+    return;
+  }
+  window.localStorage.setItem(leaderText, score.textContent);
+  // Add new leaderText to winnerList array, clear the input
+  winnerArray.push(leaderText);
+  leaderInput.value = "";
+  
+  renderBoard ();
+});
+  
+    
+</script>
 </html>
