@@ -39,15 +39,40 @@
     var storeBtn = document.getElementById("storeInfo");;
     var leaderForm = document.getElementById("leaderForm");
     var leaderInput = document.getElementById("scoreHolder");
-    var winnerArray = [];
-    var boardList = document.getElementById("leaderboard");
+
+    
     var score = document.getElementById("timer");
+    let myListToDisplay = JSON.parse(localStorage.getItem(("winnerList")));
+
+// function to grab local storage items which were apart of a previous list and list them by only targeting object "strings" with two characters and 2 digit or less numbers
+var boardList = document.getElementById("leaderboard");
+var winnerArray = [];
+for (var i = 0; i < winnerArray.length; i++) {
+    var temp = {
+        initials: winnerArray[i].value,
+        score: timer.value,
+    }
+    winnerArray.push(temp);
+}
+localStorage.setItem('winnerList', JSON.stringify(winnerArray));
+// display the winner list (render)
+for (var i = 0; i < myListToDisplay.length; i++) {
+    console.log(myListToDisplay);
+    var oldLi = document.createElement("li");
+        oldLi.textContent = win;
+        oldLi.setAttribute("class","target" );
+        boardList.appendChild(oldLi);
+}
 
 function listStorageItem () {
-    scoreBoardMember = window.localStorage.getItem();
-    winnerArray.push()
-    for (i = 0; i < winnerArray.length; i++) {};
+    
+
+
+        var  win = winnerArray[i]
+
+    };
 };
+    listStorageItem ();
 
  function renderBoard() {
   // Clear todoList element and update todoCountSpan
@@ -59,6 +84,7 @@ function listStorageItem () {
 
     var li = document.createElement("li");
     li.textContent = winner;
+    li.setAttribute("class","target" )
     boardList.appendChild(li);
   }
 }
@@ -69,18 +95,31 @@ leaderForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   var leaderText = leaderInput.value.trim();
+  //storage object keyword
+  
    // Return from function early if submitted todoText is blank
   if (leaderText === "") {
     return;
   }
-  window.localStorage.setItem(leaderText, score.textContent);
+
   // Add new leaderText to winnerList array, clear the input
   winnerArray.push(leaderText);
+  var objectArray = document.getElementsByClassName("target");
+  // Following for loop is designed to add each listed person that has done the quiz.
+  for (i = 0; i < winnerArray.length; i++) {
+    var point = score.textContent;
+    var scoreBoardMember = [
+    leaderText, point,
+    ];
+    winnerList = []
+    winnerList.push(scoreBoardMember)
+    window.localStorage.getItem(("winnerList"), JSON.stringify(scoreBoardMember));
+  }
+
+
   leaderInput.value = "";
   
   renderBoard ();
 });
-  
-    
 </script>
 </html>
