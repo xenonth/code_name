@@ -7,10 +7,7 @@
 
 * [Description](#Description)
 * [Approach](#Approach)
-* [Discussion](#Discussion)
 * [Usage](#Usage)
-* [License](#License)
-* [Contributing](#Contributing)
 * [Tests](#TEST)
 * [Questions](#Questions)
 
@@ -27,6 +24,9 @@ Once this process was done I then moved to demonstrate  my understanding of loca
 
 ##### Discussion
 I did not enjoy this topic and type/style of coding due to the ungodly amount of errors and coding accuracy required even in troubleshooting when one issue was solved another one appeared and for me this was only from 30 lines of code.  When I changed tactic to one script page max 30ish lines per html this appeared to solve one issue but it meant I would be unable to accurately code a timer.  Which I was ok with.  The idea for this can be found in webpages/timer pseudocode.
+
+#### Usage
+The site is deployed however is incomplete and not available for use it will be reviewed and possibly updated to a more modern standard and design.
 
 #### Testing
 Due to the nature of manipulating the DOM with basic Javascript I struggled greatly and was unable to accurately test my functions and returns due to time constraints and confusion of this particular topic.
